@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from '../render';
+
 let state = {
     FormPage: {
         usersData: { userName: 'admin', password: 'vlastelin_vselennoy' }
@@ -13,13 +15,14 @@ let state = {
 
 
 export let addAim = (params) => {
+    const id = state.AimsPage.AimsData[state.AimsPage.AimsData.length-1].id+1;
     let newAim = {
-        id: 3,
+        id: id,
         params: params,
         other: 'other'
     }
     state.AimsPage.AimsData.push(newAim);
-    console.log(state.AimsPage.AimsData);
+    rerenderEntireTree(state);
 }
 
 export default state;

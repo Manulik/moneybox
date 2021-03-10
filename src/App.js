@@ -4,12 +4,12 @@ import Form  from './components/form/Form';
 import Test from './components/test/test';
 import Menu from './components/Menu/menu';
 import NewAim from './components/Menu/newAim/newAim';
+import * as S from './App.styled';
 
 
 const App = (props) => {
   return (
-    <div className="App">
-      { console.log(props) }
+    <S.App>
       <h1>Moneybox</h1>
       <div>
         <BrowserRouter>
@@ -19,7 +19,7 @@ const App = (props) => {
           <Route path="/newaim" render={() => <NewAim addAim={ props.addAim } state={ props.state } />} />
         </BrowserRouter>
       </div>
-    </div>
+    </S.App>
   );
 }
 

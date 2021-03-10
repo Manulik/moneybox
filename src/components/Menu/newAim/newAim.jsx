@@ -17,14 +17,18 @@ class NewAim extends React.Component {
         }
         let newAimParams = React.createRef();
         return(
-            <S.newAim>
-                <h1>Create new Aim</h1>
-                <textarea ref={ newAimParams } ></textarea>
-                <input type="submit" value="add aim" onClick={ addAim } />
+            <S.NewAim>
+                <h2>Create new Aim</h2>
+                <S.NewAimForm>
+                    <div>
+                        <input type="text" ref={ newAimParams } placeholder="Enter the aim" />
+                    </div>
+                    <S.Button type="submit" onClick={ addAim } >Add aim</S.Button>
+                </S.NewAimForm>
                 <div>
                     { aims }
                 </div>
-            </S.newAim>
+            </S.NewAim>
         );
     }
 }
